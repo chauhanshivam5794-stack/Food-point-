@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Point — Restaurant & Fast Food | Kushinagar</title>
+<meta name="description" content="Food Point Restaurant Kushinagar — Best Fast Food, Momos, Biryani, Burger. Free delivery 1KM. Call 7379312724">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --red: #e31e24;
+  --dark-red: #b01419;
+  --yellow: #ffc107;
+  --deep-yellow: #ff9800;
+  --dark: #1a0a00;
+  --darker: #0d0500;
+  --cream: #fff8f0;
+  --white: #ffffff;
+  --shadow: 0 8px 32px rgba(227,30,36,0.25);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Poppins',sans-serif; background:var(--darker); color:var(--white); overflow-x:hidden; }
+
+/* ===== NAVBAR ===== */
+nav {
+  position:fixed; top:0; width:100%; z-index:1000;
+  background:rgba(13,5,0,0.95); backdrop-filter:blur(12px);
+  border-bottom:2px solid var(--red);
+  padding:0 2rem; height:68px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+.nav-logo-icon {
+  width:44px; height:44px;
+  background:linear-gradient(135deg,var(--red),var(--yellow));
+  border-radius:10px; display:flex; align-items:center; justify-content:center;
+  font-size:1.4rem;
+}
+.nav-logo-text { font-family:'Bebas Neue',sans-serif; font-size:1.5rem; color:var(--yellow); letter-spacing:2px; }
+.nav-links { display:flex; gap:1.8rem; list-style:none; }
+.nav-links a {
+  text-decoration:none; color:rgba(255,255,255,0.8); font-size:0.85rem; font-weight:500;
+  transition:color 0.3s; letter-spacing:0.5px;
+}
+.nav-links a:hover { color:var(--yellow); }
+.nav-order-btn {
+  background:linear-gradient(135deg,var(--red),var(--deep-yellow));
+  color:white; border:none; padding:0.5rem 1.3rem; border-radius:25px;
+  font-size:0.85rem; font-weight:700; cursor:pointer; text-decoration:none;
+  display:flex; align-items:center; gap:6px;
+  box-shadow:0 4px 15px rgba(227,30,36,0.4); transition:all 0.3s;
+}
+.nav-order-btn:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(227,30,36,0.6); }
+.hamburger { display:none; font-size:1.5rem; cursor:pointer; color:var(--yellow); }
+
+/* ===== HERO ===== */
+#home {
+  min-height:100vh; position:relative; overflow:hidden;
+  display:flex; align-items:center;
+  background:linear-gradient(135deg, #1a0a00 0%, #2a0800 50%, #1a0500 100%);
+  padding-top:68px;
+}
+.hero-bg-food {
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse at 80% 50%, rgba(227,30,36,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(255,193,7,0.1) 0%, transparent 50%);
+}
+/* Animated floating food emojis */
+.floating-foods {
+  position:absolute; inset:0; pointer-events:none; overflow:hidden;
+}
+.food-float {
+  position:absolute; font-size:2.5rem; opacity:0.12;
+  animation:floatFood 8s ease-in-out infinite;
+}
+.food-float:nth-child(1) { top:10%; left:5%; animation-delay:0s; font-size:3rem; }
+.food-float:nth-child(2) { top:70%; left:8%; animation-delay:1.5s; font-size:2rem; }
+.food-float:nth-child(3) { top:20%; right:5%; animation-delay:3s; font-size:2.5rem; }
+.food-float:nth-child(4) { top:60%; right:10%; animation-delay:4.5s; font-size:2rem; }
+.food-float:nth-child(5) { top:45%; left:15%; animation-delay:2s; font-size:1.8rem; }
+.food-float:nth-child(6) { top:30%; right:20%; animation-delay:5s; font-size:2.2rem; }
+@keyframes floatFood {
+  0%,100% { transform:translateY(0) rotate(0deg); }
+  33% { transform:translateY(-25px) rotate(10deg); }
+  66% { transform:translateY(15px) rotate(-5deg); }
+}
+
+.hero-inner { display:flex; align-items:center; justify-content:space-between; padding:0 4rem; width:100%; gap:3rem; }
+.hero-content { flex:1; z-index:2; max-width:580px; }
+
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(255,193,7,0.15); border:1px solid rgba(255,193,7,0.4);
+  color:var(--yellow); padding:0.4rem 1rem; border-radius:20px;
+  font-size:0.78rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+  margin-bottom:1.2rem; animation:fadeInUp 0.6s ease both;
+}
+.hero-title {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3.5rem,7vw,6rem); line-height:1;
+  margin-bottom:0.3rem; animation:fadeInUp 0.7s ease 0.1s both;
+}
+.hero-title .red { color:var(--red); }
+.hero-title .yellow { color:var(--yellow); }
+.hero-subtitle {
+  font-size:1.1rem; color:rgba(255,255,255,0.75); margin-bottom:0.8rem;
+  animation:fadeInUp 0.7s ease 0.2s both;
+}
+.hero-tagline {
+  font-size:clamp(1rem,2vw,1.4rem); color:var(--yellow);
+  font-weight:600; margin-bottom:1.8rem; animation:fadeInUp 0.7s ease 0.25s both;
+}
+.hero-btns { display:flex; gap:1rem; flex-wrap:wrap; animation:fadeInUp 0.7s ease 0.3s both; }
+.btn-order {
+  background:linear-gradient(135deg,var(--red),#ff4500);
+  color:white; border:none; padding:0.9rem 2rem; border-radius:30px;
+  font-size:1rem; font-weight:700; cursor:pointer; text-decoration:none;
+  display:inline-flex; align-items:center; gap:8px;
+  box-shadow:0 6px 25px rgba(227,30,36,0.5); transition:all 0.3s;
+  animation:pulse-red 2.5s infinite;
+}
+.btn-order:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(227,30,36,0.7); }
+@keyframes pulse-red {
+  0%,100% { box-shadow:0 6px 25px rgba(227,30,36,0.5); }
+  50% { box-shadow:0 6px 35px rgba(227,30,36,0.8), 0 0 0 8px rgba(227,30,36,0.1); }
+}
+.btn-call {
+  background:transparent; color:var(--yellow); border:2px solid var(--yellow);
+  padding:0.9rem 2rem; border-radius:30px; font-size:1rem; font-weight:700;
+  cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+  transition:all 0.3s;
+}
+.btn-call:hover { background:var(--yellow); color:var(--dark); transform:translateY(-3px); }
+
+.hero-stats {
+  display:flex; gap:2.5rem; margin-top:2.5rem;
+  animation:fadeInUp 0.7s ease 0.4s both;
+}
+.hero-stat h3 { font-family:'Bebas Neue',sans-serif; font-size:2rem; color:var(--yellow); }
+.hero-stat p { font-size:0.75rem; color:rgba(255,255,255,0.55); text-transform:uppercase; letter-spacing:1px; }
+
+/* Scooter delivery animation */
+.hero-visual { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:2; position:relative; }
+.food-showcase {
+  width:360px; height:360px; position:relative;
+  border-radius:50%; overflow:hidden;
+  border:3px solid rgba(255,193,7,0.3);
+  box-shadow:0 0 60px rgba(227,30,36,0.3), 0 0 120px rgba(255,193,7,0.1);
+}
+.food-showcase img {
+  width:100%; height:100%; object-fit:cover;
+  animation:heroImg 6s ease-in-out infinite;
+}
+@keyframes heroImg {
+  0%,100% { transform:scale(1.05); }
+  50% { transform:scale(1.12); }
+}
+.food-showcase::before {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(to bottom, transparent 50%, rgba(13,5,0,0.7));
+  z-index:1;
+}
+.scooter-strip {
+  width:100%; background:rgba(255,193,7,0.1); border:1px solid rgba(255,193,7,0.2);
+  border-radius:50px; padding:0.6rem 1.5rem; margin-top:1.2rem;
+  display:flex; align-items:center; gap:1rem; overflow:hidden; position:relative;
+}
+.scooter-icon {
+  font-size:1.8rem;
+  animation:driveScooter 3s ease-in-out infinite;
+  display:inline-block;
+}
+@keyframes driveScooter {
+  0%,100% { transform:translateX(0); }
+  50% { transform:translateX(10px); }
+}
+.scooter-text { font-size:0.82rem; color:var(--yellow); font-weight:600; }
+
+/* ===== OFFER BANNER ===== */
+.offer-banner {
+  background:linear-gradient(135deg,var(--red),var(--dark-red),#8b0000);
+  padding:0.9rem 2rem; text-align:center;
+  display:flex; align-items:center; justify-content:center; gap:1rem;
+  overflow:hidden; position:relative;
+}
+.offer-banner::before {
+  content:'🍔 🍟 🍕 🍜 🍗 🍔 🍟 🍕 🍜 🍗 🍔 🍟';
+  position:absolute; top:50%; left:-100%; transform:translateY(-50%);
+  font-size:1.2rem; opacity:0.15; white-space:nowrap;
+  animation:scrollFoods 15s linear infinite;
+}
+@keyframes scrollFoods {
+  0% { left:-100%; }
+  100% { left:100%; }
+}
+.offer-badge {
+  background:var(--yellow); color:var(--dark); padding:0.3rem 1rem;
+  border-radius:20px; font-size:0.82rem; font-weight:800;
+  animation:blink 1.5s ease-in-out infinite;
+}
+@keyframes blink {
+  0%,100% { opacity:1; transform:scale(1); }
+  50% { opacity:0.8; transform:scale(1.05); }
+}
+.offer-text { font-size:0.95rem; font-weight:600; color:white; }
+.offer-text strong { color:var(--yellow); }
+
+/* ===== SECTIONS COMMON ===== */
+section { padding:5rem 4rem; }
+.section-label {
+  display:inline-block; color:var(--yellow); font-size:0.75rem;
+  font-weight:700; letter-spacing:3px; text-transform:uppercase; margin-bottom:0.6rem;
+}
+.section-title {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.2rem,4vw,3.5rem); color:white; line-height:1.1; margin-bottom:0.5rem;
+}
+.section-title .red { color:var(--red); }
+.section-title .yellow { color:var(--yellow); }
+.section-divider {
+  width:60px; height:3px;
+  background:linear-gradient(90deg,var(--red),var(--yellow));
+  border-radius:2px; margin:0.8rem 0 0;
+}
+
+/* ===== MENU ===== */
+#menu { background:var(--darker); }
+.menu-tabs {
+  display:flex; gap:0.8rem; flex-wrap:wrap; margin-bottom:2.5rem; justify-content:center;
+}
+.menu-tab {
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);
+  color:rgba(255,255,255,0.7); padding:0.5rem 1.3rem; border-radius:25px;
+  font-size:0.85rem; font-weight:600; cursor:pointer; transition:all 0.3s;
+}
+.menu-tab.active, .menu-tab:hover {
+  background:linear-gradient(135deg,var(--red),var(--deep-yellow));
+  color:white; border-color:transparent;
+}
+.menu-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.5rem; }
+.menu-card {
+  background:linear-gradient(145deg,#1f0a00,#2a1000);
+  border-radius:20px; overflow:hidden;
+  border:1px solid rgba(255,193,7,0.1);
+  transition:all 0.35s; cursor:pointer; position:relative;
+}
+.menu-card:hover { transform:translateY(-8px) scale(1.02); box-shadow:0 20px 50px rgba(227,30,36,0.3); border-color:rgba(255,193,7,0.3); }
+.menu-card-img {
+  width:100%; height:200px; object-fit:cover; display:block;
+  transition:transform 0.4s;
+}
+.menu-card:hover .menu-card-img { transform:scale(1.08); }
+.menu-card-body { padding:1.2rem; }
+.menu-card-name { font-weight:700; font-size:1.05rem; color:white; margin-bottom:0.3rem; }
+.menu-card-desc { font-size:0.78rem; color:rgba(255,255,255,0.5); line-height:1.6; margin-bottom:1rem; }
+.menu-card-footer { display:flex; align-items:center; justify-content:space-between; }
+.menu-price { font-family:'Bebas Neue',sans-serif; font-size:1.4rem; color:var(--yellow); }
+.menu-order-btn {
+  background:linear-gradient(135deg,var(--red),var(--deep-yellow));
+  color:white; border:none; padding:0.45rem 1rem; border-radius:20px;
+  font-size:0.78rem; font-weight:700; cursor:pointer; text-decoration:none;
+  transition:all 0.2s; display:flex; align-items:center; gap:5px;
+}
+.menu-order-btn:hover { transform:scale(1.05); }
+.veg-badge {
+  position:absolute; top:0.8rem; left:0.8rem;
+  width:22px; height:22px; border-radius:4px; border:2px solid;
+  display:flex; align-items:center; justify-content:center; font-size:0.6rem;
+  font-weight:900;
+}
+.veg { background:rgba(0,128,0,0.9); border-color:#00cc00; color:#00ff00; }
+.nonveg { background:rgba(180,0,0,0.9); border-color:#cc0000; color:#ff6666; }
+
+/* ===== ORDER SECTION ===== */
+#order {
+  background:linear-gradient(135deg,#1a0800,#2a1000);
+  text-align:center; position:relative; overflow:hidden;
+}
+#order::before {
+  content:''; position:absolute; top:-100px; left:50%; transform:translateX(-50%);
+  width:600px; height:600px;
+  background:radial-gradient(circle,rgba(227,30,36,0.15),transparent 70%);
+  border-radius:50%;
+}
+.order-box {
+  max-width:700px; margin:0 auto;
+  background:rgba(255,255,255,0.04); border:1px solid rgba(255,193,7,0.2);
+  border-radius:24px; padding:3rem; position:relative; z-index:1;
+}
+.order-box h2 { font-family:'Bebas Neue',sans-serif; font-size:2.5rem; color:var(--yellow); margin-bottom:0.5rem; }
+.order-box p { color:rgba(255,255,255,0.6); margin-bottom:2rem; font-size:0.9rem; }
+.order-items-select {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:0.8rem; margin-bottom:2rem;
+}
+.item-check {
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);
+  border-radius:12px; padding:0.6rem 1rem; cursor:pointer;
+  font-size:0.82rem; color:rgba(255,255,255,0.7);
+  transition:all 0.2s; text-align:center; user-select:none;
+}
+.item-check.selected {
+  background:rgba(227,30,36,0.25); border-color:var(--red); color:white; font-weight:600;
+}
+.address-input {
+  width:100%; background:rgba(255,255,255,0.08); border:1px solid rgba(255,193,7,0.25);
+  border-radius:12px; padding:0.85rem 1rem; color:white;
+  font-family:'Poppins',sans-serif; font-size:0.9rem; outline:none; margin-bottom:1.5rem;
+  transition:border-color 0.3s;
+}
+.address-input:focus { border-color:var(--yellow); }
+.address-input::placeholder { color:rgba(255,255,255,0.3); }
+.whatsapp-order-btn {
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:white; border:none; padding:1rem 2.5rem; border-radius:30px;
+  font-size:1.05rem; font-weight:700; cursor:pointer; text-decoration:none;
+  display:inline-flex; align-items:center; gap:10px;
+  box-shadow:0 6px 25px rgba(37,211,102,0.4); transition:all 0.3s;
+}
+.whatsapp-order-btn:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(37,211,102,0.6); }
+
+/* ===== DELIVERY OFFER ===== */
+#delivery {
+  background:linear-gradient(135deg,var(--red),var(--dark-red));
+  text-align:center; padding:4rem 4rem; position:relative; overflow:hidden;
+}
+.delivery-inner { position:relative; z-index:1; }
+.delivery-scooter {
+  font-size:5rem; display:block; margin-bottom:1rem;
+  animation:scooterBounce 1.5s ease-in-out infinite;
+}
+@keyframes scooterBounce {
+  0%,100% { transform:translateX(0) rotate(0deg); }
+  25% { transform:translateX(15px) rotate(3deg); }
+  75% { transform:translateX(-15px) rotate(-3deg); }
+}
+.delivery-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(2rem,5vw,4rem); color:var(--yellow); margin-bottom:0.5rem; }
+.delivery-subtitle { font-size:1.1rem; color:rgba(255,255,255,0.9); margin-bottom:1.5rem; }
+.delivery-badge {
+  display:inline-block; background:var(--yellow); color:var(--dark);
+  padding:0.8rem 2.5rem; border-radius:50px; font-size:1.3rem; font-weight:900;
+  box-shadow:0 6px 25px rgba(0,0,0,0.3); animation:blink 1.5s infinite;
+  letter-spacing:1px;
+}
+.delivery-cards {
+  display:flex; gap:1.5rem; justify-content:center; margin-top:2.5rem; flex-wrap:wrap;
+}
+.delivery-card {
+  background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.2);
+  border-radius:16px; padding:1.5rem 2rem; text-align:center; min-width:160px;
+}
+.delivery-card .dc-icon { font-size:2.5rem; display:block; margin-bottom:0.5rem; }
+.delivery-card h4 { font-size:1rem; font-weight:700; color:white; }
+.delivery-card p { font-size:0.78rem; color:rgba(255,255,255,0.65); margin-top:0.2rem; }
+
+/* ===== GALLERY ===== */
+#gallery { background:#110600; }
+.gallery-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1rem;
+}
+.gallery-item {
+  border-radius:16px; overflow:hidden; position:relative;
+  cursor:pointer; aspect-ratio:1;
+  transition:transform 0.3s;
+  border:1px solid rgba(255,193,7,0.15);
+}
+.gallery-item:first-child { grid-column:span 2; aspect-ratio:2/1; }
+.gallery-item:hover { transform:scale(1.03); box-shadow:0 10px 30px rgba(227,30,36,0.4); }
+.gallery-item img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; }
+.gallery-item:hover img { transform:scale(1.1); }
+.gallery-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to top,rgba(227,30,36,0.8),transparent);
+  opacity:0; transition:opacity 0.3s;
+  display:flex; align-items:flex-end; padding:1rem;
+}
+.gallery-item:hover .gallery-overlay { opacity:1; }
+.gallery-overlay span { color:white; font-weight:700; font-size:0.9rem; }
+
+/* ===== REVIEWS ===== */
+#reviews { background:var(--darker); }
+.reviews-track-wrap { overflow:hidden; position:relative; }
+.reviews-track {
+  display:flex; gap:1.5rem;
+  animation:scrollReviews 20s linear infinite;
+  width:max-content;
+}
+.reviews-track:hover { animation-play-state:paused; }
+@keyframes scrollReviews {
+  0% { transform:translateX(0); }
+  100% { transform:translateX(-50%); }
+}
+.review-card {
+  background:linear-gradient(145deg,#1f0a00,#2a1200);
+  border:1px solid rgba(255,193,7,0.15);
+  border-radius:20px; padding:1.5rem; min-width:300px; max-width:300px;
+  position:relative;
+}
+.review-card::before {
+  content:'"'; position:absolute; top:0.5rem; right:1.2rem;
+  font-family:'Playfair Display',serif; font-size:5rem;
+  color:rgba(255,193,7,0.1); line-height:1;
+}
+.review-stars { color:var(--yellow); font-size:1rem; margin-bottom:0.7rem; }
+.review-card p { font-size:0.85rem; color:rgba(255,255,255,0.7); line-height:1.7; margin-bottom:1rem; font-style:italic; }
+.reviewer { display:flex; align-items:center; gap:0.8rem; }
+.reviewer-av {
+  width:40px; height:40px;
+  background:linear-gradient(135deg,var(--red),var(--yellow));
+  border-radius:50%; display:flex; align-items:center; justify-content:center;
+  color:white; font-weight:800; font-size:1rem;
+}
+.reviewer-info h4 { font-size:0.88rem; font-weight:700; color:white; }
+.reviewer-info span { font-size:0.72rem; color:rgba(255,255,255,0.45); }
+
+/* ===== LOCATION ===== */
+#location { background:#0d0500; }
+.location-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
+.location-info { display:flex; flex-direction:column; gap:1.2rem; }
+.loc-card {
+  background:linear-gradient(145deg,#1f0a00,#2a1000);
+  border:1px solid rgba(255,193,7,0.12);
+  border-radius:16px; padding:1.2rem;
+  display:flex; align-items:flex-start; gap:1rem; transition:all 0.3s;
+}
+.loc-card:hover { transform:translateX(6px); border-color:rgba(255,193,7,0.3); }
+.loc-icon {
+  width:48px; height:48px; flex-shrink:0;
+  background:linear-gradient(135deg,rgba(227,30,36,0.3),rgba(255,193,7,0.2));
+  border-radius:12px; display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem; color:var(--yellow);
+}
+.loc-card h4 { font-size:0.8rem; color:rgba(255,255,255,0.5); margin-bottom:0.2rem; }
+.loc-card p, .loc-card a { font-size:0.92rem; color:white; font-weight:600; text-decoration:none; }
+.loc-card a:hover { color:var(--yellow); }
+.map-box {
+  background:linear-gradient(135deg,#1f0a00,#2a1000);
+  border-radius:20px; height:320px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:1rem; border:1px solid rgba(255,193,7,0.15);
+  cursor:pointer; transition:all 0.3s; text-decoration:none; color:var(--yellow);
+  font-size:3.5rem;
+}
+.map-box:hover { transform:scale(1.02); box-shadow:0 10px 30px rgba(227,30,36,0.3); }
+.map-box p { font-size:0.9rem; color:rgba(255,255,255,0.6); font-style:italic; }
+.map-box span { font-size:0.82rem; color:var(--yellow); font-weight:600; }
+
+/* ===== CONTACT ===== */
+#contact { background:linear-gradient(135deg,#1a0800,#0d0500); text-align:center; }
+.contact-btns { display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin-top:2rem; }
+.contact-btn {
+  display:inline-flex; align-items:center; gap:10px;
+  padding:1rem 2.5rem; border-radius:30px; font-size:1rem; font-weight:700;
+  cursor:pointer; text-decoration:none; transition:all 0.3s;
+}
+.call-btn1 {
+  background:linear-gradient(135deg,var(--red),var(--dark-red));
+  color:white; box-shadow:0 6px 20px rgba(227,30,36,0.4);
+}
+.call-btn2 {
+  background:transparent; color:var(--yellow); border:2px solid var(--yellow);
+}
+.call-btn2:hover { background:var(--yellow); color:var(--dark); }
+.call-btn1:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(227,30,36,0.6); }
+.wa-btn-big {
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:white; box-shadow:0 6px 20px rgba(37,211,102,0.4);
+}
+.wa-btn-big:hover { transform:translateY(-3px); }
+.timings {
+  margin-top:2.5rem;
+  background:rgba(255,255,255,0.04); border:1px solid rgba(255,193,7,0.15);
+  border-radius:16px; padding:1.5rem 2rem; display:inline-block;
+}
+.timings h4 { color:var(--yellow); font-size:0.85rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:0.5rem; }
+.timings p { font-size:1.1rem; font-weight:600; color:white; }
+
+/* ===== FOOTER ===== */
+footer { background:#080200; padding:3rem 4rem 1.5rem; border-top:1px solid rgba(255,193,7,0.1); }
+.footer-top { display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:3rem; margin-bottom:2.5rem; }
+.footer-brand-name { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; color:var(--yellow); letter-spacing:2px; margin-bottom:0.5rem; }
+.footer-brand p { font-size:0.82rem; color:rgba(255,255,255,0.45); line-height:1.8; }
+footer h4 { color:var(--yellow); font-size:0.85rem; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:1rem; }
+footer ul { list-style:none; display:flex; flex-direction:column; gap:0.5rem; }
+footer ul li a { color:rgba(255,255,255,0.45); text-decoration:none; font-size:0.83rem; transition:color 0.2s; }
+footer ul li a:hover { color:var(--yellow); }
+.footer-bottom {
+  border-top:1px solid rgba(255,255,255,0.06); padding-top:1.5rem;
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:0.78rem; color:rgba(255,255,255,0.25);
+}
+.footer-bottom .heart { color:var(--red); }
+
+/* ===== FLOATING BUTTONS ===== */
+.float-btns { position:fixed; bottom:2rem; right:2rem; z-index:999; display:flex; flex-direction:column; gap:0.8rem; align-items:flex-end; }
+.float-wa {
+  background:#25D366; color:white; width:60px; height:60px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; font-size:1.8rem;
+  box-shadow:0 6px 25px rgba(37,211,102,0.5); text-decoration:none; transition:all 0.3s;
+  animation:pulseGreen 2s infinite;
+}
+.float-call {
+  background:var(--red); color:white; width:50px; height:50px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; font-size:1.2rem;
+  box-shadow:0 6px 25px rgba(227,30,36,0.5); text-decoration:none; transition:all 0.3s;
+}
+.float-wa:hover, .float-call:hover { transform:scale(1.15); }
+@keyframes pulseGreen {
+  0%,100% { box-shadow:0 6px 25px rgba(37,211,102,0.5); }
+  50% { box-shadow:0 6px 35px rgba(37,211,102,0.8); }
+}
+
+@keyframes fadeInUp {
+  from { opacity:0; transform:translateY(25px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width:768px) {
+  nav { padding:0 1rem; }
+  .nav-links { display:none; flex-direction:column; position:absolute; top:68px; left:0; right:0; background:#0d0500; padding:1rem 2rem; border-bottom:1px solid var(--red); }
+  .nav-links.open { display:flex; }
+  .hamburger { display:block; }
+  .nav-order-btn { display:none; }
+  .hero-inner { flex-direction:column; padding:2rem 1.5rem; text-align:center; }
+  .hero-btns { justify-content:center; }
+  .hero-stats { justify-content:center; }
+  .hero-visual { margin-top:2rem; }
+  .food-showcase { width:260px; height:260px; }
+  section { padding:3rem 1.5rem; }
+  .menu-grid { grid-template-columns:1fr; }
+  .gallery-grid { grid-template-columns:1fr 1fr; }
+  .gallery-item:first-child { grid-column:span 2; }
+  .location-grid { grid-template-columns:1fr; }
+  .footer-top { grid-template-columns:1fr; gap:1.5rem; }
+  .footer-bottom { flex-direction:column; gap:0.5rem; text-align:center; }
+  .delivery-cards { gap:1rem; }
+  .order-items-select { grid-template-columns:repeat(2,1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">
+    <div class="nav-logo-icon">🍔</div>
+    <span class="nav-logo-text">FOOD POINT</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#order">Order</a></li>
+    <li><a href="#delivery">Delivery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#location">Location</a></li>
+  </ul>
+  <a href="#order" class="nav-order-btn"><i class="fab fa-whatsapp"></i> Order Now</a>
+  <div class="hamburger" id="hamburger">☰</div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg-food"></div>
+  <div class="floating-foods">
+    <span class="food-float">🍔</span>
+    <span class="food-float">🍜</span>
+    <span class="food-float">🍗</span>
+    <span class="food-float">🍕</span>
+    <span class="food-float">🥟</span>
+    <span class="food-float">🍛</span>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">🍴 Kushinagar ka #1 Fast Food</div>
+      <h1 class="hero-title">
+        <span class="red">FOOD</span><br>
+        <span class="yellow">POINT</span>
+      </h1>
+      <p class="hero-subtitle">Restaurant & Fast Food — Rampur, Kushinagar</p>
+      <p class="hero-tagline">🔥 Delicious Food, Delivered Near You!</p>
+      <div class="hero-btns">
+        <a href="#order" class="btn-order"><i class="fab fa-whatsapp"></i> WhatsApp Order</a>
+        <a href="tel:+917379312724" class="btn-call"><i class="fas fa-phone"></i> Call Now</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><h3>1000+</h3><p>Orders Delivered</p></div>
+        <div class="hero-stat"><h3>5★</h3><p>Rating</p></div>
+        <div class="hero-stat"><h3>14+</h3><p>Menu Items</p></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="food-showcase">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80" alt="Burger" id="heroFoodImg">
+      </div>
+      <div class="scooter-strip">
+        <span class="scooter-icon">🛵</span>
+        <span class="scooter-text">₹100+ order par 1KM FREE Delivery! 🎉</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER BANNER -->
+<div class="offer-banner">
+  <span class="offer-badge">🎉 LIMITED OFFER</span>
+  <span class="offer-text"><strong>₹100 se upar</strong> order karo aur <strong>1 KM tak FREE Delivery</strong> pao! | DK Singh: <strong>7379312724</strong></span>
+</div>
+
+<!-- MENU -->
+<section id="menu">
+  <div style="text-align:center; margin-bottom:2.5rem;">
+    <span class="section-label">✦ Our Menu ✦</span>
+    <h2 class="section-title">Hamaara <span class="red">TASTY</span> <span class="yellow">MENU</span></h2>
+    <div class="section-divider" style="margin:0.8rem auto 0;"></div>
+    <p style="color:rgba(255,255,255,0.5); margin-top:1rem; font-size:0.88rem;">Fresh banaya, garam parosa — har cheez best quality mein 🔥</p>
+  </div>
+
+  <div class="menu-tabs">
+    <div class="menu-tab active" onclick="filterMenu('all',this)">🍽️ All Items</div>
+    <div class="menu-tab" onclick="filterMenu('veg',this)">🥦 Veg</div>
+    <div class="menu-tab" onclick="filterMenu('nonveg',this)">🍗 Non-Veg</div>
+    <div class="menu-tab" onclick="filterMenu('chinese',this)">🍜 Chinese</div>
+    <div class="menu-tab" onclick="filterMenu('chicken',this)">🍗 Chicken</div>
+  </div>
+
+  <div class="menu-grid" id="menuGrid">
+    <!-- VEG ITEMS -->
+    <div class="menu-card" data-cat="veg">
+      <span class="veg-badge veg">V</span>
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1529680091441-4b0ab4c0f309?w=400&q=80" alt="Momos">
+      <div class="menu-card-body">
+        <div class="menu-card-name">🥟 Momos</div>
+        <div class="menu-card-desc">Juicy steamed momos — spicy chutney ke saath. Ek baar khaoge baar baar maangoge!</div>
+        <div class="menu-card-footer">
+          <span class="menu-price">₹50</span>
+          <a href="https://wa.me/917379312724?text=Hello%20Food%20Point!%20Mujhe%20Momos%20order%20karna%20hai." target="_blank" class="menu-order-btn"><i class="fab fa-whatsapp"></i> Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card" data-cat="veg chinese">
+      <span class="veg-badge veg">V</span>
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&q=80" alt="Chowmein">
+      <div class="menu-card-body">
+        <div class="menu-card-name">🍜 Chowmein</div>
+        <div class="menu-card-desc">Crispy noodles, veggies aur secret masala — Food Point ki signature chowmein!</div>
+        <div class="menu-card-footer">
+          <span class="menu-price">₹60</span>
+          <a href="https://wa.me/917379312724?text=Hello%20Food%20Point!%20Mujhe%20Chowmein%20order%20karna%20hai." target="_blank" class="menu-order-btn"><i class="fab fa-whatsapp"></i> Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card" data-cat="veg">
+      <span class="veg-badge veg">V</span>
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80" alt="Burger">
+      <div class="menu-card-body">
+        <div class="menu-card-name">🍔 Burger</div>
+        <div class="menu-card-desc">Soft bun, crispy patty, fresh veggies aur special sauce — perfect combo!</div>
+        <div class="menu-card-footer">
+          <span class="menu-price">₹60</span>
+          <a href="https://wa.me/917379312724?text=Hello%20Food%20Point!%20Mujhe%20Burger%20order%20karna%20hai." target="_blank" class="menu-order-btn"><i class="fab fa-whatsapp"></i> Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card" data-cat="veg">
+      <span class="veg-badge veg">V</span>
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&q=80" alt="Chole Bhature">
+      <div class="menu-card-body">
+        <div class="menu-card-name">🫓 Chole Bhature</div>
+        <div class="menu-card-desc">Fluffy bhature aur masaledar chole — classic North Indian combo jo dil khush kare!</div>
+        <div class="menu-card-footer">
+          <span class="menu-price">₹80</span>
+          <a href="https://wa.me/917379312724?text=Hello%20Food%20Point!%20Mujhe%20Chole%20Bhature%20order%20karna%20hai." target="_blank" class="menu-order-btn"><i class="fab fa-whatsapp"></i> Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card" data-cat="veg chinese">
+      <span class="veg-badge veg">V</span>
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80" alt="Manchurian">
+      <div class="menu-card-body">
+        <div class="menu-card-name">🥡 Manchurian</div>
+        <div class="menu-card-desc">Crispy fried balls in tangy Manchurian sauce — Indo-Chinese ka best combo!</div>
+        <div class="menu-card-footer">
+          <span class="menu-price">₹80</span>
+          <a href="https://wa.me/917379312724?text=Hello%20Food%20Point!%20Mujhe%20Manchurian%20order%20karna%20hai." target="_blank" class="menu-order-btn"><i class="fab fa-whatsapp"></i> Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card" data-cat="veg chinese">
+      <span class="veg-badge veg">V</span>
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&q=80" alt="Fried Rice">
+      <div class="menu-card-body">
+        <div class="menu-card-name">🍚 Fried Rice</div>
+        <div class="menu-card-desc">Wok-tossed fried rice with veggies aur soy sauce — light aur filling meal!</div>
+        <div class="menu-card-footer">
+          <span class="menu-price">₹70</span>
+          <a href="https://wa.me/917379312724?text=Hello%20Food%20Point!%20Mujhe%20Fried%20Rice%20order%20karna%20hai." target="_blank" class="menu-order-btn"><i class="fab fa-whatsapp"></i> Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card" data-cat="veg">
+      <span class="veg-badge veg">V</span>
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&q=80" alt="Egg Roll">
+      <div class="menu-card-body">
+        <div class="menu-card-name">🌯 Egg Roll</div>
+        <div class="menu-card-desc">Crispy roll with egg, veggies aur spicy chutney — perfect street food!</div>
+        <div class="menu-card-footer">
+          <span class="menu-price">₹40</span>
+          <a href="https://wa.me/917379312724?text=Hello%20Food%20Point!%20Mujhe%20Egg%20Roll%20order%20karna%20hai." target="_blank" class="menu-order-btn"><i class="fab fa-whatsapp"></i> Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card" data-cat="veg chinese">
+      <span class="veg-badge veg">V</span>
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=400&q=80" alt="Red Chilli">
+      <div class="menu-card-body">
+        <div class="menu-card-name">🌶️ Red Chilli</div>
+        <div class="menu-card-desc">Extra spicy red chilli preparation — sirf brave log khaate hain! Dare to try?</div>
+        <div class="menu-card-footer">
+          <span class="menu-price">₹90</span>
+          <a href="https://wa.me/917379312724?text=Hello%20Food%20Point!%20Mujhe%20Red%20Chilli%20order%20karna%20hai." target="_blank" class="menu-order-btn"><i class="fab fa-whatsapp"></i> Order</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- NON-VEG ITEMS -->
+    <div class="menu-card" data-cat="nonveg chicken">
+      <span class="veg-badge nonveg">N</span>
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&q=80" alt="Chicken Biryani">
+      <div class="menu-card-body">
+        <div class="menu-card-name">🍛 Chicken Biryani</div>
+        <div class="menu-card-desc">Dum-cooked biryani with tender chicken pieces aur aromatic spices — royal taste!</div>
+        <div class="menu-card-footer">
+          <span class="menu-price">₹160</span>
+          <a href="https://wa.me/917379312724?text=Hello%20Food%20Point!%20Mujhe%20Chicken%20Biryani%20order%20karna%20hai." target="_blank" class="menu-order-btn"><i class="fab fa-whatsapp"></i> Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card" data-cat="nonveg chicken chinese">
+      <span class="veg-badge nonveg">N</span>
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=400&q=80" alt="Chicken Noodles">
+      <div class="menu-card-body">
+        <div class="menu-card-name">🍝 Chicken Noodles</div>
+        <div class="menu-card-desc">Juicy chicken pieces with tossed noodles in special sauce — must try!</div>
+        <div class="menu-card-footer">
+          <span class="menu-price">₹120</span>
+          <a href="https://wa.me/917379312724?text=Hello%20Food%20Point!%20Mujhe%20Chicken%20Noodles%20order%20karna%20hai." target="_blank" class="menu-order-btn"><i class="fab fa-whatsapp"></i> Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card" data-cat="nonveg chicken chinese">
+      <span class="veg-badge nonveg">N</span>
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&q=80" alt="Chicken Rice">
+      <div class="menu-card-body">
+        <div class="menu-card-name">🍚 Chicken Rice</div>
+        <div class="menu-card-desc">Flavourful chicken fried rice — wok tossed with special spices and veggies.</div>
+        <div class="menu-card-footer">
+          <span class="menu-price">₹120</span>
+          <a href="https://wa.me/917379312724?text=Hello%20Food%20Point!%20Mujhe%20Chicken%20Rice%20order%20karna%20hai." target="_blank" class="menu-order-btn"><i class="fab fa-whatsapp"></i> Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card" data-cat="nonveg chicken">
+      <span class="veg-badge nonveg">N</span>
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&q=80" alt="Chicken Soup">
+      <div class="menu-card-body">
+        <div class="menu-card-name">🍲 Chicken Soup</div>
+        <div class="menu-card-desc">Hot & comforting chicken soup — perfect for cold days ya anytime treat!</div>
+        <div class="menu-card-footer">
+          <span class="menu-price">₹80</span>
+          <a href="https://wa.me/917379312724?text=Hello%20Food%20Point!%20Mujhe%20Chicken%20Soup%20order%20karna%20hai." target="_blank" class="menu-order-btn"><i class="fab fa-whatsapp"></i> Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card" data-cat="nonveg chicken">
+      <span class="veg-badge nonveg">N</span>
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&q=80" alt="Chicken Masala">
+      <div class="menu-card-body">
+        <div class="menu-card-name">🍗 Chicken Masala</div>
+        <div class="menu-card-desc">Rich & spicy chicken masala — gravy mein duba hua tender chicken. Wow!</div>
+        <div class="menu-card-footer">
+          <span class="menu-price">₹150</span>
+          <a href="https://wa.me/917379312724?text=Hello%20Food%20Point!%20Mujhe%20Chicken%20Masala%20order%20karna%20hai." target="_blank" class="menu-order-btn"><i class="fab fa-whatsapp"></i> Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card" data-cat="nonveg chinese">
+      <span class="veg-badge nonveg">N</span>
+      <img class="menu-card-img" src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&q=80" alt="Egg Rice">
+      <div class="menu-card-body">
+        <div class="menu-card-name">🍳 Egg Rice</div>
+        <div class="menu-card-desc">Wok-fried egg rice with veggies aur special seasoning — simple yet delicious!</div>
+        <div class="menu-card-footer">
+          <span class="menu-price">₹90</span>
+          <a href="https://wa.me/917379312724?text=Hello%20Food%20Point!%20Mujhe%20Egg%20Rice%20order%20karna%20hai." target="_blank" class="menu-order-btn"><i class="fab fa-whatsapp"></i> Order</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONLINE ORDER -->
+<section id="order">
+  <div class="order-box">
+    <h2>🛵 WhatsApp ORDER</h2>
+    <p>Items chuniye, address daalein aur seedha WhatsApp pe order bhejein — ekdum aasaan!</p>
+    <div class="order-items-select" id="itemsSelect">
+      <div class="item-check" onclick="toggleItem(this,'Momos ₹50')">🥟 Momos</div>
+      <div class="item-check" onclick="toggleItem(this,'Chowmein ₹60')">🍜 Chowmein</div>
+      <div class="item-check" onclick="toggleItem(this,'Burger ₹60')">🍔 Burger</div>
+      <div class="item-check" onclick="toggleItem(this,'Chole Bhature ₹80')">🫓 Chole Bhature</div>
+      <div class="item-check" onclick="toggleItem(this,'Manchurian ₹80')">🥡 Manchurian</div>
+      <div class="item-check" onclick="toggleItem(this,'Fried Rice ₹70')">🍚 Fried Rice</div>
+      <div class="item-check" onclick="toggleItem(this,'Egg Roll ₹40')">🌯 Egg Roll</div>
+      <div class="item-check" onclick="toggleItem(this,'Red Chilli ₹90')">🌶️ Red Chilli</div>
+      <div class="item-check" onclick="toggleItem(this,'Chicken Biryani ₹160')">🍛 Chicken Biryani</div>
+      <div class="item-check" onclick="toggleItem(this,'Chicken Noodles ₹120')">🍝 Chicken Noodles</div>
+      <div class="item-check" onclick="toggleItem(this,'Chicken Rice ₹120')">🍚 Chicken Rice</div>
+      <div class="item-check" onclick="toggleItem(this,'Chicken Soup ₹80')">🍲 Chicken Soup</div>
+      <div class="item-check" onclick="toggleItem(this,'Chicken Masala ₹150')">🍗 Chicken Masala</div>
+      <div class="item-check" onclick="toggleItem(this,'Egg Rice ₹90')">🍳 Egg Rice</div>
+    </div>
+    <input class="address-input" id="deliveryAddress" placeholder="📍 Apna delivery address likhein...">
+    <br>
+    <a href="#" class="whatsapp-order-btn" id="sendOrderBtn" onclick="sendOrder(event)">
+      <i class="fab fa-whatsapp"></i> WhatsApp pe Order Bhejo
+    </a>
+  </div>
+</section>
+
+<!-- FREE DELIVERY -->
+<section id="delivery">
+  <div class="delivery-inner">
+    <span class="delivery-scooter">🛵</span>
+    <h2 class="delivery-title">FREE DELIVERY OFFER!</h2>
+    <p class="delivery-subtitle">₹100 se upar order karo aur enjoy karo FREE delivery!</p>
+    <div class="delivery-badge">🎉 1 KM TAK DELIVERY BILKUL FREE!</div>
+    <div class="delivery-cards">
+      <div class="delivery-card">
+        <span class="dc-icon">💰</span>
+        <h4>₹100+ Order</h4>
+        <p>Minimum order amount</p>
+      </div>
+      <div class="delivery-card">
+        <span class="dc-icon">📍</span>
+        <h4>1 KM Radius</h4>
+        <p>Free delivery area</p>
+      </div>
+      <div class="delivery-card">
+        <span class="dc-icon">⚡</span>
+        <h4>Fast Delivery</h4>
+        <p>Garam khana aapke paas</p>
+      </div>
+      <div class="delivery-card">
+        <span class="dc-icon">📱</span>
+        <h4>WhatsApp Order</h4>
+        <p>Seedha order karein</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div style="text-align:center; margin-bottom:2.5rem;">
+    <span class="section-label">✦ Food Gallery ✦</span>
+    <h2 class="section-title">HAMAARA <span class="yellow">KHAANA</span></h2>
+    <div class="section-divider" style="margin:0.8rem auto 0;"></div>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&q=80" alt="Biryani">
+      <div class="gallery-overlay"><span>🍛 Chicken Biryani</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80" alt="Burger">
+      <div class="gallery-overlay"><span>🍔 Burger</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1529680091441-4b0ab4c0f309?w=400&q=80" alt="Momos">
+      <div class="gallery-overlay"><span>🥟 Momos</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&q=80" alt="Chowmein">
+      <div class="gallery-overlay"><span>🍜 Chowmein</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80" alt="Manchurian">
+      <div class="gallery-overlay"><span>🥡 Manchurian</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div style="text-align:center; margin-bottom:2.5rem;">
+    <span class="section-label">✦ Customer Reviews ✦</span>
+    <h2 class="section-title">HAMAARE <span class="yellow">HAPPY</span> <span class="red">CUSTOMERS</span></h2>
+    <div class="section-divider" style="margin:0.8rem auto 0;"></div>
+  </div>
+  <div class="reviews-track-wrap">
+    <div class="reviews-track" id="reviewsTrack">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>Food Point ka Chowmein aur Burger bahut tasty hai! Roz order karta hoon. Fast delivery bhi milti hai. Kushinagar ka best fast food!</p>
+        <div class="reviewer"><div class="reviewer-av">R</div><div class="reviewer-info"><h4>Rahul Singh</h4><span>Regular Customer</span></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>Chicken Biryani ekdum mast thi! Itni achhi biryani pehle kabhi nahi khayi. Free delivery bhi mili kyunki ₹100 se upar order tha!</p>
+        <div class="reviewer"><div class="reviewer-av">S</div><div class="reviewer-info"><h4>Sunil Yadav</h4><span>Food Lover</span></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>Momos bahut juicy hain aur chutney ekdum perfect! Price bhi reasonable hai. DK bhai ke haath ka khaana khaate nahi thakta!</p>
+        <div class="reviewer"><div class="reviewer-av">P</div><div class="reviewer-info"><h4>Priya Gupta</h4><span>WhatsApp Order</span></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>WhatsApp pe order kiya aur 20 minute mein garam khana aa gaya! Red Chilli bahut spicy thi — mast lagi! Definitely recommend!</p>
+        <div class="reviewer"><div class="reviewer-av">A</div><div class="reviewer-info"><h4>Ajay Kumar</h4><span>Delivery Order</span></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>Chicken Masala sabse best tha! Gravy itni tasty thi ki roti ke saath ek plate aur mangwa li. Food Point zindabad!</p>
+        <div class="reviewer"><div class="reviewer-av">V</div><div class="reviewer-info"><h4>Vijay Tiwari</h4><span>Regular Customer</span></div></div>
+      </div>
+      <!-- Duplicate for infinite scroll -->
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>Food Point ka Chowmein aur Burger bahut tasty hai! Roz order karta hoon. Fast delivery bhi milti hai. Kushinagar ka best fast food!</p>
+        <div class="reviewer"><div class="reviewer-av">R</div><div class="reviewer-info"><h4>Rahul Singh</h4><span>Regular Customer</span></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>Chicken Biryani ekdum mast thi! Itni achhi biryani pehle kabhi nahi khayi. Free delivery bhi mili kyunki ₹100 se upar order tha!</p>
+        <div class="reviewer"><div class="reviewer-av">S</div><div class="reviewer-info"><h4>Sunil Yadav</h4><span>Food Lover</span></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>Momos bahut juicy hain aur chutney ekdum perfect! Price bhi reasonable hai. DK bhai ke haath ka khaana khaate nahi thakta!</p>
+        <div class="reviewer"><div class="reviewer-av">P</div><div class="reviewer-info"><h4>Priya Gupta</h4><span>WhatsApp Order</span></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>WhatsApp pe order kiya aur 20 minute mein garam khana aa gaya! Red Chilli bahut spicy thi — mast lagi! Definitely recommend!</p>
+        <div class="reviewer"><div class="reviewer-av">A</div><div class="reviewer-info"><h4>Ajay Kumar</h4><span>Delivery Order</span></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>Chicken Masala sabse best tha! Gravy itni tasty thi ki roti ke saath ek plate aur mangwa li. Food Point zindabad!</p>
+        <div class="reviewer"><div class="reviewer-av">V</div><div class="reviewer-info"><h4>Vijay Tiwari</h4><span>Regular Customer</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div style="text-align:center; margin-bottom:2.5rem;">
+    <span class="section-label">✦ Find Us ✦</span>
+    <h2 class="section-title">HAMAARA <span class="yellow">LOCATION</span></h2>
+    <div class="section-divider" style="margin:0.8rem auto 0;"></div>
+  </div>
+  <div class="location-grid">
+    <div class="location-info">
+      <div class="loc-card">
+        <div class="loc-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div><h4>Address</h4><p>Rampur, Jhudiya Chauraha<br>Kushinagar, Uttar Pradesh</p></div>
+      </div>
+      <a href="tel:+917379312724" class="loc-card" style="text-decoration:none;">
+        <div class="loc-icon"><i class="fas fa-phone"></i></div>
+        <div><h4>Primary Phone</h4><a href="tel:+917379312724">+91 73793 12724</a></div>
+      </a>
+      <a href="tel:+917318501078" class="loc-card" style="text-decoration:none;">
+        <div class="loc-icon"><i class="fas fa-phone-alt"></i></div>
+        <div><h4>Secondary Phone</h4><a href="tel:+917318501078">+91 73185 01078</a></div>
+      </a>
+      <a href="https://wa.me/917379312724" target="_blank" class="loc-card" style="text-decoration:none;">
+        <div class="loc-icon"><i class="fab fa-whatsapp"></i></div>
+        <div><h4>WhatsApp Order</h4><p>+91 73793 12724 — Order karein</p></div>
+      </a>
+      <div class="loc-card">
+        <div class="loc-icon"><i class="fas fa-clock"></i></div>
+        <div><h4>Timing</h4><p>Har din: 10:00 AM – 11:00 PM</p></div>
+      </div>
+      <div class="loc-card">
+        <div class="loc-icon"><i class="fas fa-user"></i></div>
+        <div><h4>Proprietor</h4><p>DK Singh (Dhananjay Singh)</p></div>
+      </div>
+    </div>
+    <a href="https://maps.google.com/?q=Rampur+Jhudiya+Chauraha+Kushinagar" target="_blank" class="map-box">
+      <i class="fas fa-map-marked-alt"></i>
+      <p>Rampur, Jhudiya Chauraha, Kushinagar</p>
+      <span>Click karo Google Maps par dekhne ke liye →</span>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <span class="section-label">✦ Contact ✦</span>
+  <h2 class="section-title" style="margin-bottom:0.5rem;">ORDER <span class="yellow">KARO</span> <span class="red">ABHI!</span></h2>
+  <div class="section-divider" style="margin:0 auto;"></div>
+  <p style="color:rgba(255,255,255,0.5); margin-top:1rem; font-size:0.9rem;">Call karo ya WhatsApp par order bhejo — garam khaana turant!</p>
+  <div class="contact-btns">
+    <a href="tel:+917379312724" class="contact-btn call-btn1"><i class="fas fa-phone"></i> 73793 12724</a>
+    <a href="tel:+917318501078" class="contact-btn call-btn2"><i class="fas fa-phone"></i> 73185 01078</a>
+    <a href="https://wa.me/917379312724?text=Hello%20Food%20Point!%20Mujhe%20order%20karna%20hai." target="_blank" class="contact-btn wa-btn-big"><i class="fab fa-whatsapp"></i> WhatsApp Order</a>
+  </div>
+  <div class="timings">
+    <h4>⏰ Opening Hours</h4>
+    <p>Har Din: 10:00 AM – 11:00 PM</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-brand-name">🍔 FOOD POINT</div>
+      <p>Rampur, Jhudiya Chauraha, Kushinagar ka best fast food restaurant. Momos, Biryani, Burger, Chowmein — sab fresh banaya jaata hai. Prop. DK Singh (Dhananjay Singh).</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#order">Order Now</a></li>
+        <li><a href="#delivery">Free Delivery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#location">Location</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+917379312724">📞 73793 12724</a></li>
+        <li><a href="tel:+917318501078">📞 73185 01078</a></li>
+        <li><a href="https://wa.me/917379312724">💬 WhatsApp Order</a></li>
+        <li><a href="#">📍 Rampur, Jhudiya Chauraha</a></li>
+        <li><a href="#">🕐 10AM – 11PM Daily</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Food Point Restaurant & Fast Food, Kushinagar. All rights reserved.</p>
+    <p>Made with <span class="heart">❤️</span> & 🍔 for food lovers</p>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="float-btns">
+  <a href="https://wa.me/917379312724?text=Hello%20Food%20Point!%20Mujhe%20order%20karna%20hai." target="_blank" class="float-wa" title="WhatsApp Order"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:+917379312724" class="float-call" title="Call Now"><i class="fas fa-phone"></i></a>
+</div>
+
+<script>
+// NAV
+document.getElementById('hamburger').addEventListener('click',()=>{
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
+  document.getElementById('navLinks').classList.remove('open');
+}));
+
+// HERO IMAGE CYCLE
+const heroImgs = [
+  'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80',
+  'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&q=80',
+  'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&q=80',
+  'https://images.unsplash.com/photo-1529680091441-4b0ab4c0f309?w=600&q=80',
+  'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80',
+];
+let heroIdx = 0;
+setInterval(()=>{
+  heroIdx = (heroIdx+1) % heroImgs.length;
+  const img = document.getElementById('heroFoodImg');
+  img.style.opacity='0';
+  setTimeout(()=>{ img.src=heroImgs[heroIdx]; img.style.opacity='1'; },400);
+},3000);
+document.getElementById('heroFoodImg').style.transition='opacity 0.4s';
+
+// MENU FILTER
+function filterMenu(cat, el) {
+  document.querySelectorAll('.menu-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.menu-card').forEach(card=>{
+    if(cat==='all' || card.dataset.cat.includes(cat)) {
+      card.style.display='block';
+    } else {
+      card.style.display='none';
+    }
+  });
+}
+
+// ORDER BUILDER
+const selectedItems = new Set();
+function toggleItem(el, item) {
+  if(selectedItems.has(item)) { selectedItems.delete(item); el.classList.remove('selected'); }
+  else { selectedItems.add(item); el.classList.add('selected'); }
+}
+function sendOrder(e) {
+  e.preventDefault();
+  if(selectedItems.size===0) { alert('⚠️ Pehle koi item chuniye!'); return; }
+  const addr = document.getElementById('deliveryAddress').value.trim();
+  if(!addr) { alert('⚠️ Delivery address daalein!'); return; }
+  const items = Array.from(selectedItems).map(i=>'• '+i).join('\n');
+  const msg = `🍔 *Food Point Order*\n\nItems:\n${items}\n\n📍 Delivery Address:\n${addr}\n\n⏰ Order Time: ${new Date().toLocaleTimeString('hi-IN')}`;
+  window.open(`https://wa.me/917379312724?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+// SCROLL ANIMATION
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.style.animation='fadeInUp 0.6s ease forwards';
+  });
+},{threshold:0.1});
+document.querySelectorAll('.menu-card,.loc-card,.delivery-card').forEach(el=>{
+  el.style.opacity='0'; observer.observe(el);
+});
+</script>
+</body>
+</html>
